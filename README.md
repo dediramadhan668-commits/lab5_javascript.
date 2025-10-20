@@ -173,3 +173,61 @@
 
 📸 ![if else](https://github.com/user-attachments/assets/c9d88feb-93f6-4bb3-b913-49292b5475c7)
 📸 ![if else hasil]([https://github.com/user-attachments/assets/656a48a1-9ba5-4](https://github.com/user-attachments/assets/656a48a1-9ba5-4)
+
+## ❓ Pertanyaan dan Tugas
+
+### 1️⃣ Buat script untuk melakukan validasi pada isian form.
+
+Berikut contoh script untuk melakukan **validasi form** menggunakan JavaScript agar memastikan pengguna mengisi data dengan benar sebelum mengirim:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Validasi Form</title>
+  <script>
+    function validasiForm() {
+      var nama = document.forms["formku"]["nama"].value;
+      var email = document.forms["formku"]["email"].value;
+      var pesan = document.forms["formku"]["pesan"].value;
+
+      if (nama == "" || email == "" || pesan == "") {
+        alert("Semua field harus diisi!");
+        return false;
+      }
+
+      // Validasi format email sederhana
+      var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(pattern)) {
+        alert("Masukkan format email yang benar!");
+        return false;
+      }
+
+      alert("Form berhasil dikirim!");
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h2>Form Validasi</h2>
+  <form name="formku" onsubmit="return validasiForm()">
+    Nama: <input type="text" name="nama"><br><br>
+    Email: <input type="text" name="email"><br><br>
+    Pesan: <textarea name="pesan"></textarea><br><br>
+    <input type="submit" value="Kirim">
+  </form>
+</body>
+</html>
+```
+
+### 📘 Penjelasan
+
+* Fungsi `validasiForm()` dijalankan saat tombol submit diklik.
+* Mengecek apakah field **nama**, **email**, dan **pesan** kosong.
+* Jika ada yang kosong, muncul `alert("Semua field harus diisi!")`.
+* Juga dilakukan validasi sederhana untuk format email menggunakan **RegEx**.
+* Jika semua valid, akan muncul pesan **“Form berhasil dikirim!”**.
+
+
+
